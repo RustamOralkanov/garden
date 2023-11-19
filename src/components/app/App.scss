@@ -1,0 +1,41 @@
+.btn-arrow {
+    padding: 1.181vw;
+    background-color: #fff;
+    border-radius: 0 0.694vw 0.694vw 0;
+    img {
+        width: 0.833vw;
+        height: 0.833vw;
+    }
+}
+
+.btn-application {
+    border-radius: 0.694vw;
+    background: var(--1, #fff);
+    padding: 0.486vw 1.042vw;
+    color: var(--3, #2b2a29);
+    font-family: "SF Pro Display";
+    font-size: 1.111vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.label {
+    color: var(--1, #fff);
+    font-size: 1.111vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    text-transform: uppercase;
+    border-radius: 3.472vw;
+    border: 0.069vw solid var(--7, #f2f2f3);
+    padding: 0.694vw 1.042vw;
+    width: fit-content;
+    height: fit-content;
+    margin-top: auto;
+}
+
+svg {
+    width: 0.833vw;
+    height: 0.833vw;
+}

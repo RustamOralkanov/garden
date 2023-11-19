@@ -1,0 +1,86 @@
+.banner {
+    background: url("../../assets/images/banner.png") center center/cover
+        no-repeat;
+    height: 41.667vw;
+    position: relative;
+
+    &-title {
+        color: var(--1, #fff);
+        font-size: 3.75vw;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 110%; /* 59.4px */
+        letter-spacing: -1.08px;
+        padding: 14.931vw 0 0 4.861vw;
+    }
+
+    &-request {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 28.125vw;
+        height: 14.444vw;
+        background-color: #7b914e;
+        border-radius: 1.042vw;
+        padding: 2.083vw;
+
+        h3 {
+            color: var(--1, #fff);
+            font-size: 1.667vw;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 110%; /* 26.4px */
+        }
+
+        &-btns {
+            position: absolute;
+            display: flex;
+            left: 0;
+            top: 8.125vw;
+
+            .btn-arrow {
+                position: relative;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    background-image: url("../../assets/icons/border-top.svg");
+                    background-position: top;
+                    display: block;
+                    width: 1.042vw;
+                    height: 1.042vw;
+                    top: -1.041vw;
+                    left: 0;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+                &:before {
+                    content: "";
+                    position: absolute;
+                    background-image: url("../../assets/icons/border-top.svg");
+                    background-position: top;
+                    display: block;
+                    width: 1.042vw;
+                    height: 1.042vw;
+                    bottom: -1.041vw;
+                    left: 0;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    transform: rotate(90deg);
+                }
+            }
+        }
+    }
+
+    &-logo {
+        position: absolute;
+        width: 9.028vw;
+        height: 9.028vw;
+        left: 6.25vw;
+        top: 0;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

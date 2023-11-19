@@ -1,0 +1,47 @@
+.quality {
+    margin-top: 10.417vw;
+
+    &-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 2.083vw;
+        row-gap: 4.861vw;
+
+        .item-1 {
+            .trim-top {
+                margin: 0;
+            }
+        }
+
+        .item-2 {
+            grid-column: 2 / 4;
+
+            .trim-text {
+                margin-top: 0;
+            }
+        }
+
+        .item-3 {
+            padding-right: 9.167vw;
+            .features-item-btns {
+                flex-direction: row-reverse;
+                justify-content: flex-end;
+            }
+        }
+
+        .item-4,
+        .item-5 {
+            height: 22.361vw;
+            border-radius: 1.042vw;
+        }
+
+        .item-4 {
+            background: url("../../assets/images/quality-1.png") center
+                center/cover no-repeat;
+        }
+        .item-5 {
+            background: url("../../assets/images/quality-2.png") center
+                center/cover no-repeat;
+        }
+    }
+}

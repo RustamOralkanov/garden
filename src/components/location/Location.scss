@@ -1,0 +1,117 @@
+.location {
+    margin-top: 10.417vw;
+
+    &-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        row-gap: 4.028vw;
+
+        .item-1 {
+            grid-column: 1 / 2;
+            display: flex;
+
+            .label {
+                color: #7b914e;
+            }
+        }
+
+        .item-2 {
+            grid-column: 2 / 4;
+        }
+
+        .item-3 {
+            grid-row: 2;
+            grid-column: 1 / 4;
+            margin: 0 -2.083vw;
+            position: relative;
+
+            .location-item-point {
+                gap: 0.694vw;
+                img {
+                    width: 2.083vw;
+                    height: 2.083vw;
+                }
+
+                h4 {
+                    color: var(--4, #555b66);
+                    font-size: 0.972vw;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 120%; /* 16.8px */
+                }
+
+                div {
+                    span {
+                        img {
+                            width: 1.042vw;
+                            height: 0.694vw;
+                        }
+                    }
+                }
+            }
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    &-item {
+        &-points {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            gap: 1.389vw;
+            top: 13.472vw;
+            left: 2.083vw;
+            cursor: pointer;
+        }
+
+        &-point {
+            display: flex;
+            align-items: center;
+            transition: all 0.5s ease-in-out;
+            div {
+                span {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.347vw;
+                    span {
+                        display: block;
+                        color: var(--5, #abaeb3);
+                        font-size: 0.972vw;
+                        font-style: normal;
+                        font-weight: 300;
+                        line-height: 120%; /* 16.8px */
+                    }
+                }
+            }
+
+            &:hover {
+                transform: translateX(2vw);
+            }
+
+            &:last-child {
+                margin-top: 14.931vw;
+            }
+        }
+    }
+
+    &-title {
+        color: var(--3, #2b2a29);
+        font-size: 4.444vw;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 110%;
+        letter-spacing: -0.089vw;
+        margin-bottom: 2.083vw;
+    }
+
+    &-text {
+        color: var(--4, #555b66);
+        font-size: 1.111vw;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+    }
+}
