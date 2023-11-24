@@ -1,3 +1,29 @@
 .gallery {
     margin-top: 9.028vw;
+    &-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &-tabs {
+        display: flex;
+    }
+
+    &-tab {
+        width: 10.069vw;
+        padding-bottom: 2.083vw;
+        cursor: pointer;
+        transition: all 0.4s ease-in-out;
+        color: var(--3, #2b2a29);
+        font-size: 1.25vw;
+        font-weight: 700;
+
+        &:hover {
+            border-bottom: 0.069vw solid var(--3, #2b2a29);
+        }
+
+        &.active {
+            border-bottom: 0.069vw solid var(--3, #2b2a29);
+        }
+    }
 }

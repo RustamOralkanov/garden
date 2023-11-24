@@ -67,7 +67,6 @@ const AllInOne = () => {
                         </Carousel>
 
                         <div className="item-2-btns">
-                            <div className="item-2-counter">01</div>
                             <Button
                                 onClick={() => {
                                     carouselRef.current.prev();

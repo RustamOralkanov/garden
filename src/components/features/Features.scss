@@ -88,8 +88,13 @@
                 height: 3.194vw;
                 padding: 0 1.042vw;
                 border-radius: 0.694vw;
+                transition: all 0.4s ease-in-out;
                 &:first-child {
                     width: 3.194vw;
+                }
+
+                &:hover {
+                    background-color: #5d6e3b;
                 }
 
                 svg {
