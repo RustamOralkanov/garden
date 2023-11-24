@@ -1,4 +1,7 @@
 import "./Harmony.scss";
+import { useState } from "react";
+import MyModal from "../modal/Modal";
+
 import banner from "../../assets/images/harmony-banner.png";
 import banner2 from "../../assets/images/harmony-banner-2.png";
 import play from "../../assets/icons/play.svg";
@@ -7,6 +10,20 @@ import glamping from "../../assets/icons/glamping.svg";
 import twelve from "../../assets/icons/twelve.svg";
 
 const Harmony = () => {
+    const [isModalVisible, setIsModalVisible] = useState(false);
+
+    const showModal = () => {
+        setIsModalVisible(true);
+    };
+
+    const handleOk = () => {
+        setIsModalVisible(false);
+    };
+
+    const handleCancel = () => {
+        setIsModalVisible(false);
+    };
+
     return (
         <div className="harmony">
             <div className="harmony-banner">
@@ -27,9 +44,17 @@ const Harmony = () => {
                     </p>
                 </div>
                 <div className="harmony-video-img">
-                    <div className="harmony-video-play">
+                    <div className="harmony-video-play" onClick={showModal}>
                         <img src={play} alt="play" />
                     </div>
+                    <MyModal
+                        isModalVisible={isModalVisible}
+                        handleOk={handleOk}
+                        handleCancel={handleCancel}
+                        src={
+                            "https://www.youtube.com/embed/624Aize8Ar4?si=3cb4K2i_FAif86xy"
+                        }
+                    />
                 </div>
             </div>
             <div className="harmony-accent">

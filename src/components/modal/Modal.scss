@@ -1,0 +1,38 @@
+.ant {
+    &-modal {
+        width: 55.556vw !important;
+        height: 31.25vw !important;
+
+        &-content {
+            width: 100%;
+            height: 100%;
+            padding: 1.389vw !important;
+            border-radius: 1.042vw !important;
+        }
+
+        &-body {
+            height: 100%;
+
+            iframe {
+                width: 100%;
+                height: 100%;
+                border-radius: 1.042vw !important;
+            }
+        }
+
+        &-close {
+            width: 1.667vw !important;
+            height: 1.667vw !important;
+            background-color: #7b914e !important;
+            border-radius: 50% !important;
+            top: 1.181vw !important;
+            right: 1.181vw !important;
+
+            svg {
+                color: #fff;
+                width: 0.833vw;
+                height: 0.833vw;
+            }
+        }
+    }
+}

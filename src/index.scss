@@ -14,6 +14,15 @@ body {
     padding: 2.083vw;
 }
 
+.title {
+    color: var(--3, #2b2a29);
+    font-size: 4.444vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%; /* 70.4px */
+    letter-spacing: -0.089vw;
+}
+
 @font-face {
     font-family: "SF Pro Display";
     src: url("./fonts/SFProDisplay-Light.woff2") format("woff2");

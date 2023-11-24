@@ -1,0 +1,49 @@
+.progress {
+    margin-top: 10.417vw;
+
+    &-wrapper {
+        margin-top: 4.861vw;
+        display: flex;
+        gap: 2.083vw;
+    }
+
+    &-item {
+        position: relative;
+        &-title {
+            color: var(--3, #2b2a29);
+            font-size: 1.667vw;
+            font-weight: 700;
+            line-height: 1.667vw;
+            padding: 1.389vw 2.431vw;
+        }
+
+        img {
+            width: 30.556vw;
+            height: 30.556vw;
+        }
+
+        &-play {
+            width: 5vw;
+            height: 5vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 1.042vw;
+            background-color: #7b914e;
+            position: absolute;
+            top: 0;
+            left: 0;
+            cursor: pointer;
+            transition: all 0.5s ease-in-out;
+
+            &:hover {
+                background-color: #2b2a29;
+            }
+
+            img {
+                width: 1.667vw;
+                height: 1.667vw;
+            }
+        }
+    }
+}

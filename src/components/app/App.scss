@@ -39,3 +39,19 @@ svg {
     width: 0.833vw;
     height: 0.833vw;
 }
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: unset;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar {
+    width: 0.417vw;
+    background-color: #ffffff;
+    position: fixed;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #7b914e;
+    border-radius: 0.694vw;
+}

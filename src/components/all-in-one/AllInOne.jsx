@@ -1,6 +1,6 @@
-import { useState, useRef, useEffect } from "react";
-import { register } from "swiper/element/bundle";
-import { Pagination, Navigation } from "swiper/modules";
+import React from "react";
+import { useState } from "react";
+import { Button, Carousel } from "antd";
 
 import "./AllInOne.scss";
 
@@ -12,10 +12,10 @@ import allInOne5 from "../../assets/images/all-in-one-5.jpg";
 import allInOne6 from "../../assets/images/all-in-one-6.jpg";
 import allInOne7 from "../../assets/images/all-in-one-7.jpg";
 
-register();
+import slideArrow from "../../assets/icons/slide-arrow.svg";
 
 const AllInOne = () => {
-    const swiperElRef = useRef(null);
+    const carouselRef = React.createRef();
     const [facilities] = useState([
         { name: "Детская комната", active: false },
         { name: "Йога центр", active: false },
@@ -35,13 +35,6 @@ const AllInOne = () => {
         { img: allInOne7, alt: "Седьмой слайд" },
     ]);
 
-    useEffect(() => {
-        swiperElRef.current.addEventListener("swiperprogress", (e) => {
-            const [swiper] = e.detail;
-            console.log(swiper.activeIndex, 1);
-        });
-    }, []);
-
     return (
         <div className="all-in-one">
             <div className="all-in-one_grid">
@@ -56,26 +49,56 @@ const AllInOne = () => {
                     </p>
                 </div>
                 <div className="all-in-one_item item-2">
-                    <swiper-container
-                        ref={swiperElRef}
-                        slides-per-view="1"
-                        pagination={{
-                            type: "fraction",
-                        }}
-                        modules={[Pagination, Navigation]}
-                        class="all-in-one_swiper"
-                    >
-                        {slider.map((item, index) => {
-                            return (
-                                <swiper-slide
-                                    class="all-in-one_swiper__item"
+                    <div className="item-2-carousel">
+                        <Carousel
+                            effect="fade"
+                            ref={carouselRef}
+                            dots={false}
+                            slidesToShow={1}
+                        >
+                            {slider.map((item, index) => (
+                                <div
+                                    className="all-in-one_item-slide"
                                     key={index}
                                 >
-                                    <img src={item.img} alt={item.alt} />
-                                </swiper-slide>
-                            );
-                        })}
-                    </swiper-container>
+                                    <img src={item.img} alt="slide-image" />
+                                </div>
+                            ))}
+                        </Carousel>
+
+                        <div className="item-2-btns">
+                            <div className="item-2-counter">01</div>
+                            <Button
+                                onClick={() => {
+                                    carouselRef.current.prev();
+                                }}
+                            >
+                                <img
+                                    src={slideArrow}
+                                    alt="arrow"
+                                    className="arrow-prev"
+                                />
+                            </Button>
+                            <Button
+                                onClick={() => {
+                                    carouselRef.current.next();
+                                }}
+                            >
+                                <img src={slideArrow} alt="arrow" />
+                            </Button>
+                        </div>
+                    </div>
+                    <div className="item-2-info">
+                        <div className="label">Спортивный зал</div>
+                        <p className="text">
+                            В жилом комплексе RAMS Garden вам доступны
+                            тематические комнаты инновационной системы
+                            All-in-One. Здесь каждый найдет то, что ему
+                            необходимо для покорения новых высот в бизнесе или
+                            для того, чтобы расслабиться и забыть о повседневных
+                            заботах.
+                        </p>
+                    </div>
                 </div>
                 <div className="all-in-one_item item-3">
                     <ul className="all-in-one_list">
