@@ -40,6 +40,10 @@ svg {
     height: 0.833vw;
 }
 
+section {
+    scroll-margin: 4.167vw;
+}
+
 ::-webkit-scrollbar-track {
     -webkit-box-shadow: unset;
     background-color: transparent;

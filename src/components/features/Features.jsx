@@ -3,7 +3,7 @@ import Arrow from "../common/Arrow";
 
 const Features = () => {
     return (
-        <div className="features">
+        <section className="features" id="features">
             <div className="features-grid">
                 <div className="features-item item-1">
                     <h3 className="features-item-title">Выгода</h3>
@@ -72,7 +72,7 @@ const Features = () => {
                 <div className="features-item item-7"></div>
                 <div className="features-item item-8"></div>
             </div>
-        </div>
+        </section>
     );
 };
 

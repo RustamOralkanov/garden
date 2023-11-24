@@ -3,7 +3,7 @@ import Arrow from "../common/Arrow";
 
 const Quality = () => {
     return (
-        <div className="quality">
+        <section className="quality">
             <div className="quality-grid">
                 <div className="quality-item item-1">
                     <h4 className="trim-top">Чистовая отделка</h4>
@@ -31,7 +31,7 @@ const Quality = () => {
                 <div className="quality-item item-4"></div>
                 <div className="quality-item item-5"></div>
             </div>
-        </div>
+        </section>
     );
 };
 

@@ -54,7 +54,7 @@ const Location = () => {
     ]);
 
     return (
-        <div className="location">
+        <section className="location" id="location">
             <div className="location-grid">
                 <div className="location-item item-1">
                     <div className="label">карта</div>
@@ -80,7 +80,7 @@ const Location = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

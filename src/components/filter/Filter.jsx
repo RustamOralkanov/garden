@@ -4,7 +4,7 @@ import Cross from "../common/Cross";
 
 const Filter = () => {
     return (
-        <div className="filter">
+        <section className="filter">
             <div className="filter-wrapper">
                 <div className="filter-item">
                     <h3 className="filter-item-grey">Выберите комнтаность</h3>
@@ -98,7 +98,7 @@ const Filter = () => {
                     <Cross />
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

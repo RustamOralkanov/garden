@@ -8,12 +8,14 @@ import allInOne4 from "../../assets/images/all-in-one-4.jpg";
 import allInOne5 from "../../assets/images/all-in-one-5.jpg";
 import allInOne6 from "../../assets/images/all-in-one-6.jpg";
 import allInOne7 from "../../assets/images/all-in-one-7.jpg";
+import { useState } from "react";
 
 const Gallery = () => {
-    const items = [
+    const [items, setItems] = useState([
         {
             key: "1",
             label: "Фасад",
+            active: false,
             images: [
                 {
                     img: allInOne1,
@@ -48,22 +50,39 @@ const Gallery = () => {
         {
             key: "2",
             label: "Двор",
+            active: false,
             children: "Content of Tab Pane 2",
         },
         {
             key: "3",
             label: "Холл",
+            active: false,
             children: "Content of Tab Pane 3",
         },
-    ];
+    ]);
+
+    const handleFacilities = (index) => {
+        const updateItems = items.map((item, idx) => ({
+            ...item,
+            active: idx === index ? true : false,
+        }));
+
+        setItems(updateItems);
+    };
 
     return (
-        <section className="gallery">
+        <section className="gallery" id="gallery">
             <div className="gallery-top">
                 <h2 className="title">Галерея</h2>
                 <div className="gallery-tabs">
                     {items.map((item, index) => (
-                        <div className="gallery-tab" key={index}>
+                        <div
+                            className={`gallery-tab ${
+                                item.active ? "active" : ""
+                            }`}
+                            key={index}
+                            onClick={() => handleFacilities(index)}
+                        >
                             {item.label}
                         </div>
                     ))}

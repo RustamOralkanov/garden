@@ -25,7 +25,7 @@ const Harmony = () => {
     };
 
     return (
-        <div className="harmony">
+        <section className="harmony">
             <div className="harmony-banner">
                 <img src={banner} alt="banner" />
             </div>
@@ -105,7 +105,7 @@ const Harmony = () => {
                     <h5>ЭТАЖЕЙ</h5>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

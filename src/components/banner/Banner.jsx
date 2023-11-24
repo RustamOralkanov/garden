@@ -1,20 +1,53 @@
+import { useState } from "react";
+import scrollToAnchor from "../utils/anchor";
+
 import "./Banner.scss";
 import arrow from "../../assets/icons/arrow.svg";
 import logo from "../../assets/icons/logo.svg";
 
 const Banner = () => {
+    const [nav] = useState([
+        {
+            name: "Чистовая отделка",
+            id: "trim",
+        },
+        {
+            name: "Преимущества",
+            id: "features",
+        },
+        {
+            name: "Расположение",
+            id: "location",
+        },
+        {
+            name: "All-in-One",
+            id: "all-in-one",
+        },
+        {
+            name: "Галерея",
+            id: "gallery",
+        },
+    ]);
+
+    const handleItemClick = (id) => {
+        scrollToAnchor({ id });
+    };
+
     return (
-        <div className="banner">
+        <section className="banner">
             <div className="banner-logo">
                 <img src={logo} alt="logo" />
             </div>
             <div className="banner-nav">
                 <ul className="banner-nav-list">
-                    <li>Чистовая отделка</li>
-                    <li>Преимущества</li>
-                    <li>Расположение</li>
-                    <li>All-in-One</li>
-                    <li>Галерея</li>
+                    {nav.map((item, index) => (
+                        <li
+                            onClick={() => handleItemClick(item.id)}
+                            key={index}
+                        >
+                            {item.name}
+                        </li>
+                    ))}
                 </ul>
                 <div className="banner-nav-phone">
                     <a href="tel:+77072124444">+7 707 212 44 44</a>
@@ -51,7 +84,7 @@ const Banner = () => {
                     <button className="btn-application">Оставить заявку</button>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 
