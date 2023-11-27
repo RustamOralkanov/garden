@@ -2,6 +2,7 @@
     background: var(--2, #7b914e);
     margin: 10.417vw -2.083vw 0;
     padding: 0 2.083vw;
+    overflow: hidden;
 
     &-banner {
         margin: 0 -2.083vw;
@@ -136,7 +137,7 @@
         margin: 0 -2.083vw;
 
         .item-1 {
-            background: url("../../assets/images/img6.png") center center/cover
+            background: url("../../assets/images/img7.png") center center/cover
                 no-repeat;
             margin-left: 2.083vw;
         }
@@ -152,7 +153,7 @@
                 display: block;
                 width: 1.042vw;
                 height: 1.042vw;
-                top: -1.041vw;
+                top: calc(-1.041vw + 1px);
                 right: 0;
                 transform: rotate(-90deg);
                 background-repeat: no-repeat;
@@ -167,7 +168,7 @@
                 width: 1.042vw;
                 height: 1.042vw;
                 bottom: -1.002vw;
-                right: 0;
+                right: -1px;
                 transform: rotate(180deg);
                 background-repeat: no-repeat;
                 background-size: cover;
@@ -208,7 +209,7 @@
         }
 
         .item-4 {
-            background: url("../../assets/images/img7.png") center center/cover
+            background: url("../../assets/images/img6.png") center center/cover
                 no-repeat;
             margin-right: 2.083vw;
         }

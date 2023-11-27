@@ -45,6 +45,7 @@ import slideArrow from "../../assets/icons/slide-arrow.svg";
 const AllInOne = () => {
     const carouselRef = React.createRef();
     const [slider, setSlider] = useState([]);
+    const [activeSlide, setActiveSlide] = useState(0);
     const [facilities, setFacilities] = useState([
         {
             name: "Детская комната",
@@ -119,7 +120,7 @@ const AllInOne = () => {
             ...item,
             active: idx === index ? true : false,
         }));
-
+        setActiveSlide(0);
         setFacilities(updatedFacilities);
         setSlider(updatedFacilities[index].images || []);
     };
@@ -151,6 +152,9 @@ const AllInOne = () => {
                             ref={carouselRef}
                             dots={false}
                             slidesToShow={1}
+                            beforeChange={(current, next) =>
+                                setActiveSlide(next)
+                            }
                         >
                             {slider.map((item, index) => (
                                 <div
@@ -163,6 +167,9 @@ const AllInOne = () => {
                         </Carousel>
 
                         <div className="item-2-btns">
+                            <div className="item-2-btns-counter">
+                                0{activeSlide + 1}
+                            </div>
                             <Button
                                 onClick={() => {
                                     carouselRef.current.prev();

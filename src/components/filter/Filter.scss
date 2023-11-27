@@ -61,26 +61,34 @@
             border-radius: 0.694vw;
             border: 0.069vw solid var(--5, #abaeb3);
             max-width: 21.25vw;
+            gap: 0.278vw;
             .line {
-                margin: 0 2.083vw;
-                font-size: 1.111vw;
+                font-size: 0.694vw;
                 line-height: 1;
             }
 
             div {
                 display: flex;
                 align-items: center;
-                span {
-                    margin-right: 0.556vw;
-                }
+                gap: 0.278vw;
 
                 input {
                     background-color: unset;
                     border: unset;
-                    width: 6.944vw;
+                    width: 7.014vw;
+                    font-size: 1.25vw;
+                    &::placeholder {
+                        font-size: 1.25vw;
+                    }
 
                     &:focus-visible {
                         outline: unset;
+                    }
+
+                    &::-webkit-outer-spin-button,
+                    &::-webkit-inner-spin-button {
+                        -webkit-appearance: none;
+                        margin: 0;
                     }
                 }
             }

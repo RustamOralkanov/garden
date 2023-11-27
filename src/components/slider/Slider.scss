@@ -8,12 +8,13 @@
         margin-right: 2.083vw;
         opacity: 0.3;
         transition: all 0.4s ease-in-out;
+        border-radius: 1.042vw !important;
 
         img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 1.042vw;
+            border-radius: 1.042vw !important;
         }
     }
 
@@ -70,6 +71,85 @@
             }
             &:hover {
                 border-color: #7b914e !important;
+            }
+        }
+    }
+
+    &-whitespace {
+        width: 2.083vw;
+        position: absolute;
+        height: 100%;
+        top: 0;
+        left: 63.194vw !important;
+        background-color: #fff;
+    }
+
+    &-descr {
+        border-radius: 0 1.042vw 0 0;
+        padding: 1.389vw 1.389vw 0 0;
+        background-color: #fff;
+        position: absolute;
+        bottom: 0;
+
+        &:after {
+            content: "";
+            display: block;
+            width: 1.111vw;
+            height: 1.111vw;
+            position: absolute;
+            left: -1px;
+            top: calc(-1.076vw + 1px);
+            background-image: url(/src/assets/icons/border-top.svg);
+            background-size: 100%;
+            transform: rotate(0deg);
+        }
+
+        &:before {
+            content: "";
+            display: block;
+            width: 1.111vw;
+            height: 1.111vw;
+            position: absolute;
+            bottom: -1px;
+            right: calc(-1.076vw - 1px);
+            background-image: url(/src/assets/icons/border-top.svg);
+            background-size: 100%;
+            transform: rotate(0deg);
+        }
+
+        &-counter {
+            display: flex;
+            gap: 2.083vw;
+            align-items: center;
+            width: 29.167vw;
+            padding: 1.597vw 2.083vw;
+            border-radius: 1.042vw;
+            border: 0.069vw solid var(--5, #abaeb3);
+
+            div {
+                span {
+                    &:first-child {
+                        color: var(--2, #7b914e);
+                        font-size: 4.444vw;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 110%; /* 70.4px */
+                        letter-spacing: -0.289vw;
+                    }
+                    &:last-child {
+                        color: var(--2, #7b914e);
+                        font-size: 1.389vw;
+                        font-weight: 400;
+                        line-height: 110%; /* 22px */
+                        letter-spacing: -0.09vw;
+                    }
+                }
+                p {
+                    color: var(--3, #2b2a29);
+                    font-size: 1.111vw;
+                    font-style: normal;
+                    font-weight: 400;
+                }
             }
         }
     }

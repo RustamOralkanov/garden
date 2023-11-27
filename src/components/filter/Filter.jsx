@@ -30,7 +30,7 @@ const Filter = () => {
                             <span className="filter-item-grey">от</span>
                             <input
                                 type="number"
-                                placeholder="0"
+                                placeholder="10 000 000"
                                 className="filter-item-black"
                             />
                         </div>
@@ -39,7 +39,7 @@ const Filter = () => {
                             <span className="filter-item-grey">до</span>
                             <input
                                 type="number"
-                                placeholder="0"
+                                placeholder="12 000 000"
                                 className="filter-item-black"
                             />
                             <span className="filter-item-grey">₸</span>

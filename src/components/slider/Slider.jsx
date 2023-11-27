@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Carousel } from "antd";
 
 import "./Slider.scss";
@@ -6,6 +6,7 @@ import slideArrow from "../../assets/icons/slide-arrow.svg";
 
 const Slider = ({ slider }) => {
     const carouselRef = React.createRef();
+    const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
 
     if (slider) {
         return (
@@ -15,6 +16,7 @@ const Slider = ({ slider }) => {
                     dots={false}
                     slidesToShow={1}
                     variableWidth={true}
+                    afterChange={(index) => setCurrentSlideIndex(index)}
                 >
                     {slider.map((item, index) => (
                         <div className="slider-item" key={index}>
@@ -22,6 +24,7 @@ const Slider = ({ slider }) => {
                         </div>
                     ))}
                 </Carousel>
+                <div className="slider-whitespace"></div>
                 <div className="slider-btns">
                     <Button
                         onClick={() => {
@@ -41,6 +44,29 @@ const Slider = ({ slider }) => {
                     >
                         <img src={slideArrow} alt="arrow" />
                     </Button>
+                </div>
+                <div className="slider-descr">
+                    <div className="slider-descr-counter">
+                        <div>
+                            <span>{currentSlideIndex + 1}</span>
+                            <span>&nbsp;/&nbsp;{slider.length}</span>
+                        </div>
+                        <div>
+                            {slider.map((item, index) => (
+                                <p
+                                    key={index}
+                                    style={{
+                                        display:
+                                            index === currentSlideIndex
+                                                ? "block"
+                                                : "none",
+                                    }}
+                                >
+                                    {item.descr}
+                                </p>
+                            ))}
+                        </div>
+                    </div>
                 </div>
             </div>
         );

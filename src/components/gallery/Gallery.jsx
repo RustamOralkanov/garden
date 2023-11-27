@@ -1,49 +1,41 @@
+import { useState, useEffect } from "react";
 import Slider from "../slider/Slider";
 import "./Gallery.scss";
 
-import allInOne1 from "../../assets/images/all-in-one-1.jpg";
-import allInOne2 from "../../assets/images/all-in-one-2.jpg";
-import allInOne3 from "../../assets/images/all-in-one-3.jpg";
-import allInOne4 from "../../assets/images/all-in-one-4.jpg";
-import allInOne5 from "../../assets/images/all-in-one-5.jpg";
-import allInOne6 from "../../assets/images/all-in-one-6.jpg";
-import allInOne7 from "../../assets/images/all-in-one-7.jpg";
-import { useState } from "react";
+import facade1 from "../../assets/images/facade/facade-1.webp";
+import facade2 from "../../assets/images/facade/facade-2.webp";
+import facade3 from "../../assets/images/facade/facade-3.webp";
+import facade4 from "../../assets/images/facade/facade-4.webp";
+
+import yard1 from "../../assets/images/yard/yard-1.webp";
+import yard2 from "../../assets/images/yard/yard-2.webp";
+import yard3 from "../../assets/images/yard/yard-3.webp";
+import yard4 from "../../assets/images/yard/yard-4.webp";
+import yard5 from "../../assets/images/yard/yard-5.webp";
 
 const Gallery = () => {
+    const [slider, setSlider] = useState([]);
     const [items, setItems] = useState([
         {
             key: "1",
             label: "Фасад",
-            active: false,
+            active: "active",
             images: [
                 {
-                    img: allInOne1,
-                    descr: "Korem ipsum dolor sit amet, consectetur adipiscing elit.",
+                    img: facade1,
+                    descr: "Korem ipsum dolor sit amet, consectetur adipiscing elit. 1",
                 },
                 {
-                    img: allInOne2,
-                    descr: "Korem ipsum dolor sit amet, consectetur adipiscing elit.",
+                    img: facade2,
+                    descr: "Korem ipsum dolor sit amet, consectetur adipiscing elit. 2",
                 },
                 {
-                    img: allInOne3,
-                    descr: "Korem ipsum dolor sit amet, consectetur adipiscing elit.",
+                    img: facade3,
+                    descr: "Korem ipsum dolor sit amet, consectetur adipiscing elit. 3",
                 },
                 {
-                    img: allInOne4,
-                    descr: "Korem ipsum dolor sit amet, consectetur adipiscing elit.",
-                },
-                {
-                    img: allInOne5,
-                    descr: "Korem ipsum dolor sit amet, consectetur adipiscing elit.",
-                },
-                {
-                    img: allInOne6,
-                    descr: "Korem ipsum dolor sit amet, consectetur adipiscing elit.",
-                },
-                {
-                    img: allInOne7,
-                    descr: "Korem ipsum dolor sit amet, consectetur adipiscing elit.",
+                    img: facade4,
+                    descr: "Korem ipsum dolor sit amet, consectetur adipiscing elit. 4",
                 },
             ],
         },
@@ -51,13 +43,51 @@ const Gallery = () => {
             key: "2",
             label: "Двор",
             active: false,
-            children: "Content of Tab Pane 2",
+            images: [
+                {
+                    img: yard1,
+                    descr: "Korem ipsum dolor sit amet, consectetur adipiscing elit. 1",
+                },
+                {
+                    img: yard2,
+                    descr: "Korem ipsum dolor sit amet, consectetur adipiscing elit. 2",
+                },
+                {
+                    img: yard3,
+                    descr: "Korem ipsum dolor sit amet, consectetur adipiscing elit. 3",
+                },
+                {
+                    img: yard4,
+                    descr: "Korem ipsum dolor sit amet, consectetur adipiscing elit. 4",
+                },
+                {
+                    img: yard5,
+                    descr: "Korem ipsum dolor sit amet, consectetur adipiscing elit. 5",
+                },
+            ],
         },
         {
             key: "3",
             label: "Холл",
             active: false,
-            children: "Content of Tab Pane 3",
+            images: [
+                {
+                    img: facade1,
+                    descr: "Korem ipsum dolor sit amet, consectetur adipiscing elit. 1",
+                },
+                {
+                    img: facade2,
+                    descr: "Korem ipsum dolor sit amet, consectetur adipiscing elit. 2",
+                },
+                {
+                    img: facade3,
+                    descr: "Korem ipsum dolor sit amet, consectetur adipiscing elit. 3",
+                },
+                {
+                    img: facade4,
+                    descr: "Korem ipsum dolor sit amet, consectetur adipiscing elit. 4",
+                },
+            ],
         },
     ]);
 
@@ -68,7 +98,15 @@ const Gallery = () => {
         }));
 
         setItems(updateItems);
+        setSlider(updateItems[index].images || []);
     };
+
+    useEffect(() => {
+        if (slider.length === 0 && items.length > 0) {
+            const defaultFacility = items.find((item) => item.active);
+            setSlider(defaultFacility.images || []);
+        }
+    }, [slider, items]);
 
     return (
         <section className="gallery" id="gallery">
@@ -88,7 +126,7 @@ const Gallery = () => {
                     ))}
                 </div>
             </div>
-            <Slider slider={items[0].images} />
+            <Slider slider={slider} />
         </section>
     );
 };
