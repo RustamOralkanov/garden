@@ -7,22 +7,20 @@ import MyModal from "../modal/Modal";
 
 const Progress = () => {
     const [isModalVisible, setIsModalVisible] = useState(false);
+    const [videoUrl, setVideoUrl] = useState("");
     const [complex] = useState([
         {
-            date: "Декабрь 2022",
-            video: "https://www.youtube.com/embed/Tij4WCkO7fI?si=HWwYG_-t--0-5s11",
+            date: "Август 2023",
+            video: "https://www.youtube.com/embed/Tij4WCkO7fI?si=DVIVnlx-DEKULPXW",
         },
         {
-            date: "Январь 2023",
-            video: "https://www.youtube.com/embed/Tij4WCkO7fI?si=HWwYG_-t--0-5s11",
-        },
-        {
-            date: "Февраль 2023",
-            video: "https://www.youtube.com/embed/Tij4WCkO7fI?si=HWwYG_-t--0-5s11",
+            date: "Ноябрь 2023",
+            video: "https://www.youtube.com/embed/vswCBq3HEh4?si=JINl8Ia0AcTgaCxf",
         },
     ]);
 
-    const showModal = () => {
+    const showModal = (video) => {
+        setVideoUrl(video);
         setIsModalVisible(true);
     };
 
@@ -42,18 +40,21 @@ const Progress = () => {
                     <div className="progress-item" key={index}>
                         <img src={progressBg} alt="background" />
                         <h4 className="progress-item-title">{item.date}</h4>
-                        <div className="progress-item-play" onClick={showModal}>
+                        <div
+                            className="progress-item-play"
+                            onClick={() => showModal(item.video)}
+                        >
                             <img src={play} alt="play" />
                         </div>
-                        <MyModal
-                            isModalVisible={isModalVisible}
-                            handleOk={handleOk}
-                            handleCancel={handleCancel}
-                            src={item.video}
-                        />
                     </div>
                 ))}
             </div>
+            <MyModal
+                isModalVisible={isModalVisible}
+                handleOk={handleOk}
+                handleCancel={handleCancel}
+                src={videoUrl}
+            />
         </section>
     );
 };

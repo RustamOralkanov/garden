@@ -1,0 +1,42 @@
+.ant {
+    &-slider {
+        margin: 0 !important;
+        padding: 0;
+        position: absolute;
+        bottom: -0.417vw;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 85%;
+        &-rail {
+            height: 0.278vw;
+        }
+
+        &-handle {
+            width: 0.625vw !important;
+            height: 0.625vw !important;
+            &::before {
+                width: 0.625vw !important;
+                height: 0.625vw !important;
+            }
+            &::after {
+                width: 0.625vw !important;
+                height: 0.625vw !important;
+                background-color: var(--2, #7b914e) !important;
+                box-shadow: unset !important;
+            }
+        }
+
+        &-horizontal {
+            height: 0.833vw;
+        }
+
+        &-track {
+            height: 0.069vw !important;
+            background-color: var(--2, #7b914e) !important;
+        }
+    }
+
+    &-horizontal {
+        height: 0.833vw;
+    }
+}

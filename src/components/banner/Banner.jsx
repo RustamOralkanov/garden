@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import scrollToAnchor from "../utils/anchor";
 
 import "./Banner.scss";
@@ -6,6 +6,7 @@ import arrow from "../../assets/icons/arrow.svg";
 import logo from "../../assets/icons/logo.svg";
 
 const Banner = () => {
+    const [isActive, setIsActive] = useState(false);
     const [nav] = useState([
         {
             name: "Чистовая отделка",
@@ -33,12 +34,18 @@ const Banner = () => {
         scrollToAnchor({ id });
     };
 
+    useEffect(() => {
+        window.addEventListener("scroll", function () {
+            this.window.scrollY > 400 ? setIsActive(true) : setIsActive(false);
+        });
+    });
+
     return (
         <section className="banner">
             <div className="banner-logo">
                 <img src={logo} alt="logo" />
             </div>
-            <div className="banner-nav">
+            <div className={`banner-nav ${isActive ? "active" : ""}`}>
                 <ul className="banner-nav-list">
                     {nav.map((item, index) => (
                         <li

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button, Carousel } from "antd";
 
 import "./Slider.scss";
@@ -7,11 +7,18 @@ import slideArrow from "../../assets/icons/slide-arrow.svg";
 const Slider = ({ slider }) => {
     const carouselRef = React.createRef();
     const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+    const [carouselKey, setCarouselKey] = useState(0);
+
+    useEffect(() => {
+        setCarouselKey((key) => key + 1);
+        setCurrentSlideIndex(0);
+    }, [slider]);
 
     if (slider) {
         return (
             <div className="slider">
                 <Carousel
+                    key={carouselKey}
                     ref={carouselRef}
                     dots={false}
                     slidesToShow={1}

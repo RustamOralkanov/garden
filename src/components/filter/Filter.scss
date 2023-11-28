@@ -62,6 +62,7 @@
             border: 0.069vw solid var(--5, #abaeb3);
             max-width: 21.25vw;
             gap: 0.278vw;
+            position: relative;
             .line {
                 font-size: 0.694vw;
                 line-height: 1;
@@ -140,6 +141,7 @@
         background-color: #fff;
         padding: 0 0.556vw;
         border-radius: 100vw;
+        cursor: pointer;
 
         h5 {
             color: var(--4, #555b66);

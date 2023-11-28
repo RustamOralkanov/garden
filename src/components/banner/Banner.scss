@@ -99,6 +99,18 @@
         position: absolute;
         top: 1.389vw;
         right: 1.389vw;
+        transition: all 0.5s ease-in-out;
+
+        &.active {
+            position: fixed;
+            top: 0.389vw;
+            right: 2.083vw;
+            left: 2.083vw;
+            margin: 0 auto;
+            z-index: 99;
+            width: unset;
+            background-color: var(--2, #7b914e);
+        }
 
         &-list {
             display: flex;

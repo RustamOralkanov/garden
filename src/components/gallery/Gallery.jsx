@@ -2,16 +2,22 @@ import { useState, useEffect } from "react";
 import Slider from "../slider/Slider";
 import "./Gallery.scss";
 
-import facade1 from "../../assets/images/facade/facade-1.webp";
-import facade2 from "../../assets/images/facade/facade-2.webp";
-import facade3 from "../../assets/images/facade/facade-3.webp";
-import facade4 from "../../assets/images/facade/facade-4.webp";
+import facade1 from "../../assets/images/facade/facade-1.jpg";
+import facade2 from "../../assets/images/facade/facade-2.jpg";
+import facade3 from "../../assets/images/facade/facade-3.jpg";
+import facade4 from "../../assets/images/facade/facade-4.jpg";
 
 import yard1 from "../../assets/images/yard/yard-1.webp";
 import yard2 from "../../assets/images/yard/yard-2.webp";
 import yard3 from "../../assets/images/yard/yard-3.webp";
 import yard4 from "../../assets/images/yard/yard-4.webp";
 import yard5 from "../../assets/images/yard/yard-5.webp";
+
+import hall1 from "../../assets/images/hall/hall-1.jpg";
+import hall2 from "../../assets/images/hall/hall-2.jpg";
+import hall3 from "../../assets/images/hall/hall-3.jpg";
+import hall4 from "../../assets/images/hall/hall-4.jpg";
+import hall5 from "../../assets/images/hall/hall-5.jpg";
 
 const Gallery = () => {
     const [slider, setSlider] = useState([]);
@@ -72,19 +78,23 @@ const Gallery = () => {
             active: false,
             images: [
                 {
-                    img: facade1,
+                    img: hall1,
                     descr: "Korem ipsum dolor sit amet, consectetur adipiscing elit. 1",
                 },
                 {
-                    img: facade2,
+                    img: hall2,
                     descr: "Korem ipsum dolor sit amet, consectetur adipiscing elit. 2",
                 },
                 {
-                    img: facade3,
+                    img: hall3,
                     descr: "Korem ipsum dolor sit amet, consectetur adipiscing elit. 3",
                 },
                 {
-                    img: facade4,
+                    img: hall4,
+                    descr: "Korem ipsum dolor sit amet, consectetur adipiscing elit. 4",
+                },
+                {
+                    img: hall5,
                     descr: "Korem ipsum dolor sit amet, consectetur adipiscing elit. 4",
                 },
             ],

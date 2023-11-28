@@ -44,6 +44,7 @@ import slideArrow from "../../assets/icons/slide-arrow.svg";
 
 const AllInOne = () => {
     const carouselRef = React.createRef();
+    const [facility, setFacility] = useState("");
     const [slider, setSlider] = useState([]);
     const [activeSlide, setActiveSlide] = useState(0);
     const [facilities, setFacilities] = useState([
@@ -122,6 +123,7 @@ const AllInOne = () => {
         }));
         setActiveSlide(0);
         setFacilities(updatedFacilities);
+        setFacility(updatedFacilities[index].name || "");
         setSlider(updatedFacilities[index].images || []);
     };
 
@@ -129,6 +131,7 @@ const AllInOne = () => {
         if (slider.length === 0 && facilities.length > 0) {
             const defaultFacility = facilities.find((item) => item.active);
             setSlider(defaultFacility.images || []);
+            setFacility(defaultFacility.name || "");
         }
     }, [slider, facilities]);
 
@@ -191,7 +194,7 @@ const AllInOne = () => {
                         </div>
                     </div>
                     <div className="item-2-info">
-                        <div className="label">Спортивный зал</div>
+                        <div className="label">{facility}</div>
                         <p className="text">
                             В жилом комплексе RAMS Garden вам доступны
                             тематические комнаты инновационной системы

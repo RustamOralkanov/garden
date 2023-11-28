@@ -10,6 +10,7 @@ const MyModal = ({ isModalVisible, handleOk, handleCancel, src }) => {
             onCancel={handleCancel}
             centered={true}
             footer={null}
+            destroyOnClose={true}
         >
             <iframe width="420" height="315" src={src}></iframe>
         </Modal>
